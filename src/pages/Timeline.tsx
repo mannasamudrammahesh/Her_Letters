@@ -124,11 +124,11 @@ const Timeline: React.FC = () => {
                 <div className="md:ml-16">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
                     {event.imageUrl && (
-                      <div className="h-72 md:h-96 bg-gray-200 overflow-hidden"> {/* Increased height for a larger image holder */}
+                      <div className="h-72 md:h-96 bg-gray-200 overflow-hidden">
                         <img
                           src={event.imageUrl}
                           alt={event.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover object-top"
                           onError={(e) => {
                             // Fallback to a placeholder if image fails to load
                             e.currentTarget.src = 'https://images.pexels.com/photos/5749153/pexels-photo-5749153.jpeg';
