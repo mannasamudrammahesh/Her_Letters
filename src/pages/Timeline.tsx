@@ -124,7 +124,7 @@ const Timeline: React.FC = () => {
                 <div className="md:ml-16">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
                     {event.imageUrl && (
-                      <div className="h-48 bg-gray-200 overflow-hidden">
+                      <div className="h-72 md:h-96 bg-gray-200 overflow-hidden"> {/* Increased height for a larger image holder */}
                         <img
                           src={event.imageUrl}
                           alt={event.title}
