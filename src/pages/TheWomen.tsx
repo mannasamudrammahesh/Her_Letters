@@ -19,6 +19,7 @@ const TheWomen: React.FC = () => {
   const { isPlaying, currentText, speak, stop } = useVoiceNarration();
 
   const women: Woman[] = [
+    // ... (same as your data above)
     {
       id: 'matangini-hazra',
       name: 'Matangini Hazra',
@@ -116,11 +117,11 @@ const TheWomen: React.FC = () => {
               className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer"
               onClick={() => setSelectedWoman(woman)}
             >
-              <div className="h-48 overflow-hidden bg-gray-200">
+              <div className="h-64 overflow-hidden bg-gray-200 flex items-start justify-center">
                 <img
                   src={woman.imageUrl}
                   alt={woman.name}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
                     // Fallback to a placeholder if image fails to load
                     e.currentTarget.src = 'https://images.pexels.com/photos/5749153/pexels-photo-5749153.jpeg';
@@ -163,15 +164,17 @@ const TheWomen: React.FC = () => {
               <div className="p-6">
                 <div className="flex flex-col md:flex-row gap-6">
                   <div className="md:w-1/3">
-                    <img
-                      src={selectedWoman.imageUrl}
-                      alt={selectedWoman.name}
-                      className="w-full rounded-lg"
-                      onError={(e) => {
-                        e.currentTarget.src = 'https://images.pexels.com/photos/5749153/pexels-photo-5749153.jpeg';
-                      }}
-                    />
-                    <div className="mt-4 text-center">
+                    <div className="h-80 bg-gray-200 overflow-hidden flex items-start justify-center mb-4 rounded-lg">
+                      <img
+                        src={selectedWoman.imageUrl}
+                        alt={selectedWoman.name}
+                        className="w-full h-full object-cover object-top"
+                        onError={(e) => {
+                          e.currentTarget.src = 'https://images.pexels.com/photos/5749153/pexels-photo-5749153.jpeg';
+                        }}
+                      />
+                    </div>
+                    <div className="text-center">
                       <div className="text-lg font-semibold text-gray-900">{selectedWoman.name}</div>
                       <div className="text-blue-600">{selectedWoman.period}</div>
                       <div className="text-gray-500">{selectedWoman.region}</div>
